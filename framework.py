@@ -31,8 +31,6 @@ class main:
             ticks=pygame.time.get_ticks()
             if(gri.numInaccuracies() != 0):
                 self.setTime(window, ticks, clock, font)
-            else:
-                self.__init__()
     def grid(self, window, size, rows):
         distanceBtwRows = size // rows
         x = 0
@@ -54,7 +52,7 @@ class main:
         distanceBtwRows = size // rows
         #add relative path below
         print(filepath)
-        dieFive = pygame.image.load("spotthedifference/SpotTheDifference/images/" + filepath)
+        dieFive = pygame.image.load("images/" + filepath)
         dieFive = pygame.transform.scale(dieFive, (int(distanceBtwRows *.95), int(distanceBtwRows * .95)))
         window.blit(dieFive, (x, y))
 
@@ -151,6 +149,6 @@ class main:
         text_surface = font.render(out, True, (255, 0, 0), (255, 255, 255))
         window.blit(text_surface, (size *1.1,size// 1.5))
         pygame.display.flip()
-        clock.tick(10)
+        clock.tick(60)
 
 m = main()
